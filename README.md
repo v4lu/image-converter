@@ -37,6 +37,9 @@ The server will start and listen on port 8080.
 
 To convert an image, send a POST request to the `/convert` endpoint with the image file in the request body. You can specify the desired output format using the `format` query parameter.
 
+- Supported input formats: Any format supported by ImageMagick (common formats like JPEG, PNG, WebP, AVIF, HEIC, etc.)
+
+
 ### Supported Formats
 
 - AVIF (default)
@@ -74,18 +77,8 @@ Here are some examples using curl to convert images:
    curl -X POST -F "image=@/path/to/your/image.webp" "http://localhost:8080/convert?format=png" --output converted_image.png
    ```
 
-## Error Handling
 
-The service will return appropriate HTTP status codes and error messages if something goes wrong:
 
-- 400 Bad Request: If the image file is missing or the request is malformed
-- 405 Method Not Allowed: If a non-POST request is sent to the /convert endpoint
-- 500 Internal Server Error: If there's an error during the conversion process
-
-## Limitations
-
-- Maximum file size: 10MB
-- Supported input formats: Any format supported by ImageMagick (common formats like JPEG, PNG, WebP, AVIF, HEIC, etc.)
 
 ## Contributing
 
