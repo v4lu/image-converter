@@ -1,0 +1,12 @@
+services:
+  image-converter:
+    build: .
+    ports:
+      - "${PORT:-8080}:${PORT:-8080}"
+    environment:
+      - PORT=${PORT:-8080}
+      - AWS_REGION=${AWS_REGION}
+      - AWS_ACCESS_KEY=${AWS_ACCESS_KEY}
+      - AWS_SECRET_KEY=${AWS_SECRET_KEY}
+      - AWS_S3_BUCKET=${AWS_S3_BUCKET}
+    command: ["/bin/sh", "-c", "image-converter"]
