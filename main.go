@@ -19,7 +19,7 @@ import (
 )
 
 const (
-	maxUploadSize = 10 << 20
+	maxUploadSize = 20 << 20
 )
 
 var (
